@@ -1,0 +1,18 @@
+.button{
+    display: inline-block;
+    background-color: $first-color;
+    color: #1a1a1a;
+    padding: .2rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: .3s;
+
+    &:hover{
+        background-color: $first-color-light;
+    }
+
+    i{
+        font-size: 1.5rem;
+    }
+
+}
