@@ -27,14 +27,17 @@
         <div class="booklist">
             <div class="book">
                 <div class="img">
-                    <img src="" alt="">
+                    <img src="https://kbimages1-a.akamaihd.net/a3fb0737-8700-49ff-a4bf-3af6734ddbbd/1200/1200/False/the-art-of-war-with-an-introduction-by-nigel-cawthorne.jpg" alt="">
                 </div>
-                <h2>Title</h2>
-                <p>Author</p>
-                <p>pages</p>
-                
+                <div class="content">	
+                    <h2>The Art of War</h2>
+                    <p>Sun Tzu</p>
+                    <p>288</p>
+                </div>
             </div>
+            
         </div>
+        
     </div>
 
     <div class="modal-container" id="modal-container">
@@ -49,15 +52,15 @@
 
                     <label>
                         Title
-                        <input type="text" name="title" id="title" placeholder="Book Title" class="field">
+                        <input type="text" name="title" id="title" placeholder="Book Title" class="field" required>
                     </label>
                     <label>
                         Author
-                        <input type="text" name="Author" id="Author" placeholder="Author" class="field">
+                        <input type="text" name="Author" id="Author" placeholder="Author" class="field" required>
                     </label>
                     <label>
                         Number of pages
-                        <input type="number" name="pages" id="pages" placeholder="Pages" class="field">
+                        <input type="number" name="pages" id="pages" placeholder="Pages" class="field" required>
                     </label>
                     <label>
                         Image URL

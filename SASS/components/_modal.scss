@@ -22,11 +22,17 @@
   flex-direction: column;
   position: relative;
   transition: transform 1s;
+  border-radius: 1rem;
   transform: translateY(0%);
 }
 
 .close {
+  color: $text-color;
   cursor: pointer;
+  &:hover{
+    color: $title-color;
+  }
+
 }
 
 .modal-close {
@@ -34,13 +40,15 @@
 }
 
 .modal-header {
-  background-color: $second-color;
+  background-color: $third-color;
   padding: $mb-0-5;
   padding-left: $mb-1-5;
   padding-right: $mb-1-5;
   display: flex;
   justify-content: space-between;
-  & h2{
-    color: $text-color;
+  border-radius: 1rem 1rem 0 0;
+  h2{
+    color: $title-color;
   }
+
 }
