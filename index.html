@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,49 +9,68 @@
     <link rel="stylesheet" href="css/styles.css">
     <title>Library</title>
 </head>
+
 <body>
     <header class="header">
         <div class="container">
             <nav>
                 <div class="logotype">Library<i class="fas fa-book-open"></i></div>
-                <input type="text" name="" id="">
+                <div class="search">
+                    <input type="text" name="" id="" >
+                </div>
                 <button class="button new-book" id="new-book"><i class="fas fa-plus"></i></button>
             </nav>
 
         </div>
     </header>
     <div class="container">
-        <div class="booklist"></div>
+        <div class="booklist">
+            <div class="book">
+                <div class="img">
+                    <img src="" alt="">
+                </div>
+                <h2>Title</h2>
+                <p>Author</p>
+                <p>pages</p>
+                
+            </div>
+        </div>
     </div>
 
     <div class="modal-container" id="modal-container">
         <div class="modal modal-close" id="modal">
-            <div >
-                <div class="modal-header">
-                    <h2>New Book</h2>
-                    <div class="close" id="close"><i class="fas fa-times"></i></div>
-                </div>   
-                <form action="/" id="form">
+
+            <div class="modal-header">
+                <h2>New Book</h2>
+                <div class="close" id="close"><i class="fas fa-times"></i></div>
+            </div>
+            <div class="form-container">
+                <form action="/" id="form" class="form">
+
                     <label>
                         Title
-                        <input type="text" name="title" id="title" placeholder="Book Title">
+                        <input type="text" name="title" id="title" placeholder="Book Title" class="field">
                     </label>
                     <label>
                         Author
-                        <input type="text" name="Author" id="Author" placeholder="Author">
+                        <input type="text" name="Author" id="Author" placeholder="Author" class="field">
                     </label>
                     <label>
                         Number of pages
-                        <input type="number" name="pages" id="pages" placeholder="Pages">
+                        <input type="number" name="pages" id="pages" placeholder="Pages" class="field">
                     </label>
                     <label>
                         Image URL
-                        <input type="text" name="image" id="image" placeholder="Image URL">
+                        <input type="text" name="image" id="image" placeholder="Image URL" class="field">
                     </label>
+                    <button class="button-fm">Guardar</button>
                 </form>
+
             </div>
+
         </div>
     </div>
     <script src="js/app.js"></script>
 </body>
+
 </html>

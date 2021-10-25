@@ -20,8 +20,8 @@ body {
   height: 100vh;
   font-family: "Poppins", sans-serif;
   font-size: 0.938rem;
-  background-color: orange;
-  color: #292828;
+  background-color: #F2E5E4;
+  color: #262526;
   transition: 0.5s;
   display: flex;
   justify-content: center;
@@ -31,7 +31,7 @@ h1,
 h2,
 h3 {
   font-weight: 600;
-  color: black;
+  color: #F2B872;
   line-height: 1.5;
 }
 
@@ -46,29 +46,28 @@ img {
   margin-right: 1.5rem;
 }
 
-.button {
-  display: inline-block;
-  background-color: green;
-  color: #1a1a1a;
-  padding: .2rem 1.5rem;
-  border-radius: 10px;
-  font-weight: 600;
+button {
+  padding: .5rem 1rem;
+  background-color: #966BF2;
+  color: #F2E5E4;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
   transition: .3s;
+  border-radius: 5px;
 }
 
-.button:hover {
-  background-color: lime;
-}
-
-.button i {
-  font-size: 1.5rem;
+button:hover {
+  background-color: #9EF277;
+  color: #262526;
 }
 
 .header {
   display: flex;
   justify-content: center;
   width: 100%;
-  background-color: black;
+  background-color: #966BF2;
   position: fixed;
   top: 0;
   left: 0;
@@ -80,7 +79,17 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: yellow;
+}
+
+.logotype {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+}
+
+.logotype i {
+  margin-left: .2rem;
+  color: blueviolet;
 }
 
 .modal-container {
@@ -101,11 +110,10 @@ nav {
 
 .modal {
   background: #fff;
-  width: 40%;
-  height: 50%;
-  text-align: center;
+  width: 50%;
+  height: 70%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   position: relative;
   transition: transform 1s;
   transform: translateY(0%);
@@ -120,10 +128,62 @@ nav {
 }
 
 .modal-header {
-  background-color: yellow;
+  background-color: #9EF277;
   padding: 0.5rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   display: flex;
   justify-content: space-between;
+}
+
+.modal-header h2 {
+  color: #262526;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  margin: 1rem;
+  min-width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.field {
+  width: 100%;
+  border: 2px solid rgba(0, 0, 0, 0);
+  outline: none;
+  background-color: rgba(230, 230, 230, 0.6);
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 22px;
+  transition: .3s;
+  border-radius: 5px;
+}
+
+.field:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.search {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search input {
+  width: 70%;
+  border: 2px solid rgba(0, 0, 0, 0);
+  outline: none;
+  background-color: rgba(230, 230, 230, 0.6);
+  padding: 0.1rem 1rem;
+  font-size: 1.1rem;
+  transition: .3s;
+  border-radius: 5px;
 }

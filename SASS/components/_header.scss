@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  background-color: black;
+  background-color: $first-color;
   position: fixed;
   top: 0;
   left: 0;
@@ -14,5 +14,15 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: yellow;
+}
+
+.logotype{
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+  & i{
+    margin-left: .2rem;
+    color:blueviolet
+  }
+
 }

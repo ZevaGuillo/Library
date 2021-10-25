@@ -1,18 +1,15 @@
-.button{
-    display: inline-block;
+button{
+    padding: .5rem 1rem;
     background-color: $first-color;
-    color: #1a1a1a;
-    padding: .2rem 1.5rem;
-    border-radius: 10px;
-    font-weight: 600;
+    color: $text-color-light;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
     transition: .3s;
-
+    border-radius: 5px;
     &:hover{
         background-color: $first-color-light;
+        color: $text-color;
     }
-
-    i{
-        font-size: 1.5rem;
-    }
-
 }
