@@ -51,7 +51,7 @@ img {
   margin-right: 1rem;
 }
 
-button {
+.button {
   padding: .5rem 1rem;
   background-color: #966BF2;
   color: #F2E5E4;
@@ -61,9 +61,10 @@ button {
   cursor: pointer;
   transition: .3s;
   border-radius: 5px;
+  text-align: center;
 }
 
-button:hover {
+.button:hover {
   background-color: #9EF277;
   color: #262526;
 }
@@ -150,6 +151,16 @@ nav {
 
 .modal-header h2 {
   color: #F26C6B;
+}
+
+.alert {
+  padding: .2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  font-size: 1.1rem;
+  background-color: #F26C6B;
+  border-radius: 1rem;
+  color: #F2E5E4;
 }
 
 .form-container {
