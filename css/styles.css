@@ -117,7 +117,7 @@ nav {
 .modal {
   background: #fff;
   width: 50%;
-  height: 70%;
+  height: auto;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -221,6 +221,7 @@ nav {
 }
 
 .booklist .book {
+  position: relative;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   background-color: #F2B872;
   min-width: 200px;
@@ -250,4 +251,22 @@ nav {
   border: none;
   border-radius: 1rem 1rem 0 0;
   filter: brightness(90%);
+}
+
+.modify {
+  position: absolute;
+  display: flex;
+  gap: .5rem;
+  right: 5%;
+  bottom: 5%;
+}
+
+.modify .edit:hover {
+  cursor: pointer;
+  color: #7957c4;
+}
+
+.modify .delete:hover {
+  cursor: pointer;
+  color: #F26C6B;
 }

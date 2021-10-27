@@ -5,12 +5,16 @@ const modalContainer = document.getElementById("modal-container");
 
 newBook.addEventListener("click", (e) => {
   e.preventDefault();
+  modalOpen();
+});
+
+function modalOpen(){
   modalContainer.style.opacity = "1";
   modalContainer.style.visibility = "visible";
   modal.classList.toggle("modal-close");
-});
+}
 
-function Mclose() {
+function modalClose() {
   modalContainer.style.opacity = "0";
   modalContainer.style.visibility = "hidden";
   modal.classList.toggle("modal-close");
@@ -19,12 +23,12 @@ function Mclose() {
 
 
 closeModal.addEventListener("click", (e) => {
-  Mclose();
+  modalClose();
 });
 
 window.addEventListener("click", (e) => {
   if (e.target === modalContainer) {
-    Mclose();
+    modalClose();
   }
 });
 
