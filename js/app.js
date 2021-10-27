@@ -165,8 +165,8 @@ function editBook(book){
 function deleteBook(e, book){
     let books = getLocalStorage();
 
-    for(let b of books){
-        if(b.title === book.title && b.author === book.author && b.pages === book.pages && b.imageURL === book.imageURL){
+    for(let b in books){
+        if(books[b].title === book.title && books[b].author === book.author && books[b].pages === book.pages && books[b].imageURL === book.imageURL){
             
             books.splice(b,1);
 
