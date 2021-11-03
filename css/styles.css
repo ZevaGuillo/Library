@@ -200,8 +200,13 @@ nav {
   justify-content: center;
 }
 
-.search input {
+.search div {
+  position: relative;
   width: 70%;
+}
+
+.search div input {
+  width: 100%;
   border: 2px solid rgba(0, 0, 0, 0);
   outline: none;
   background-color: rgba(230, 230, 230, 0.6);
@@ -209,6 +214,14 @@ nav {
   font-size: 1.1rem;
   transition: .3s;
   border-radius: 1rem;
+}
+
+.search div i {
+  color: #966BF2;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  transition: all 0.5s linear;
 }
 
 .booklist {

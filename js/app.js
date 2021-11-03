@@ -8,25 +8,24 @@ const formBtn = document.getElementById("form-btn");
 let isModify = false;
 let bookModify = undefined;
 
-if(localStorage.length === 0) localStorage.setItem('books', JSON.stringify(['nada']));
+if (localStorage.length === 0)
+  localStorage.setItem("books", JSON.stringify(["nada"]));
+
 renderBookList();
 
-function getLocalStorage(){
-
-    let books = JSON.parse(localStorage.getItem('books'));
-    return books;
+function getLocalStorage() {
+  let books = JSON.parse(localStorage.getItem("books"));
+  return books;
 }
 
-function renderBookList(){
-    let books = getLocalStorage();
+function renderBookList() {
+  let books = getLocalStorage();
 
+  console.log(books);
 
-    console.log(books);
-
-    for (let b of books){
-        if(b !== 'nada') createBook(b);
-    }
-
+  for (let b of books) {
+    if (b !== "nada") createBook(b);
+  }
 }
 
 function Book(title, author, pages, imageURL, isRead) {
@@ -45,24 +44,27 @@ formBtn.addEventListener("click", (e) => {
   ) {
     alertForm();
   } else {
+    if (!isModify) {
+      saveBook();
+    } else {
+      let books = getLocalStorage();
 
-    if(!isModify){
-        saveBook();
-    }else{
-
-        let books = getLocalStorage();
-
-        for(let b of books){
-            if(b.title === bookModify.title && b.author === bookModify.author && b.pages === bookModify.pages && b.imageURL === bookModify.imageURL){
-                b.title = txtTitle.value;
-                b.author = txtAuthor.value;
-                b.pages = txtPages.value;
-                b.imageURL = txtImageURL.value;
-            }
+      for (let b of books) {
+        if (
+          b.title === bookModify.title &&
+          b.author === bookModify.author &&
+          b.pages === bookModify.pages &&
+          b.imageURL === bookModify.imageURL
+        ) {
+          b.title = txtTitle.value;
+          b.author = txtAuthor.value;
+          b.pages = txtPages.value;
+          b.imageURL = txtImageURL.value;
         }
+      }
 
-        localStorage.setItem('books', JSON.stringify(books));
-        location.reload();
+      localStorage.setItem("books", JSON.stringify(books));
+      location.reload();
     }
 
     removeAlertForm();
@@ -70,32 +72,32 @@ formBtn.addEventListener("click", (e) => {
   }
 });
 
-function checkUrl(url){
-    return url.match(/\w+\.(jpg|jpeg|gif|png|tiff|bmp)$/gi);
+function checkUrl(url) {
+  return url.match(/\w+\.(jpg|jpeg|gif|png|tiff|bmp)$/gi);
 }
 
-function saveBook(){
-    let title = txtTitle.value;
-    let author = txtAuthor.value;
-    let pages = txtPages.value;
-    let imageURL = txtImageURL.value;
+function saveBook() {
+  let title = txtTitle.value;
+  let author = txtAuthor.value;
+  let pages = txtPages.value;
+  let imageURL = txtImageURL.value;
 
-    let book = new Book(title, author, pages, imageURL, false);
+  let book = new Book(title, author, pages, imageURL, false);
 
-    if(!checkUrl(String(imageURL)) || imageURL === ''){
-        book.imageURL = "https://cdna.artstation.com/p/assets/images/images/042/438/256/large/min-yum-pastel.jpg?1634531075";
-    }
+  if (!checkUrl(String(imageURL)) || imageURL === "") {
+    book.imageURL =
+      "https://cdna.artstation.com/p/assets/images/images/042/438/256/large/min-yum-pastel.jpg?1634531075";
+  }
 
-    saveInLocalStorage(book);
-    createBook(book);
+  saveInLocalStorage(book);
+  createBook(book);
 }
 
-function saveInLocalStorage(book){
-    let item = JSON.parse(localStorage.getItem('books'));
-    item.push(book);
-    localStorage.setItem('books', JSON.stringify(item));
+function saveInLocalStorage(book) {
+  let item = JSON.parse(localStorage.getItem("books"));
+  item.push(book);
+  localStorage.setItem("books", JSON.stringify(item));
 }
-
 
 function alertForm() {
   let div = document.createElement("div");
@@ -120,8 +122,7 @@ function removeAlertForm() {
   txtImageURL.value = "";
 }
 
-function createBook(
-  book) {
+function createBook(book) {
   let divBook = document.createElement("div");
   divBook.classList.add("book");
 
@@ -140,40 +141,41 @@ function createBook(
     </div>
     `;
 
-  divBook.querySelector('.edit').addEventListener("click", (e)=>{
+  divBook.querySelector(".edit").addEventListener("click", (e) => {
     editBook(book);
   });
 
-  divBook.querySelector('.delete').addEventListener("click", (e)=>{
+  divBook.querySelector(".delete").addEventListener("click", (e) => {
     deleteBook(e, book);
   });
 
   booklist.appendChild(divBook);
-
 }
 
-function editBook(book){
-    modalOpen();
-    isModify= true;
-    txtTitle.value = book.title;
-    txtAuthor.value = book.author;
-    txtPages.value = book.pages;
-    txtImageURL.value = book.imageURL;
-    bookModify = book;
+function editBook(book) {
+  modalOpen();
+  isModify = true;
+  txtTitle.value = book.title;
+  txtAuthor.value = book.author;
+  txtPages.value = book.pages;
+  txtImageURL.value = book.imageURL;
+  bookModify = book;
 }
 
-function deleteBook(e, book){
-    let books = getLocalStorage();
+function deleteBook(e, book) {
+  let books = getLocalStorage();
 
-    for(let b in books){
-        if(books[b].title === book.title && books[b].author === book.author && books[b].pages === book.pages && books[b].imageURL === book.imageURL){
-            
-            books.splice(b,1);
-
-        }
+  for (let b in books) {
+    if (
+      books[b].title === book.title &&
+      books[b].author === book.author &&
+      books[b].pages === book.pages &&
+      books[b].imageURL === book.imageURL
+    ) {
+      books.splice(b, 1);
     }
-    localStorage.setItem('books', JSON.stringify(books));
+  }
+  localStorage.setItem("books", JSON.stringify(books));
 
-    location.reload();
-
+  location.reload();
 }
